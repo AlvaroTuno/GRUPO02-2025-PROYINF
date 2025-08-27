@@ -10,7 +10,7 @@
 
 > Obtener enlace desde el home de la wiki del repo.
 
-Puede acceder a la Wiki mediante el siguiente [enlace](https://gitlab.inf.utfsm.cl/)
+Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/AlvaroTuno/GRUPO02-2025-PROYINF/wiki)
 
 ## Videos
 
