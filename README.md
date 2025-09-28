@@ -44,6 +44,7 @@ docker compose up --build
 
 (para detener los contenedores)  
 docker compose down -v
+y si no funciona el anterior pueden usar ctrl+c.
 
 si no les ejecuta asegurense de estar en la carpeta correcta  
 si trabajan desde windows deben tener instalado WSL2 y tenerlo activado en docker desktop  
