@@ -18,6 +18,7 @@ Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/Alvaro
 ## Aspectos técnicos relevantes
 
 _Todo aspecto relevante cuando para poder usar el proyecto o consideraciones del proyecto base a ser entregado_
+
 Este proyecto usa los siguientes stack de desarrollo:
 
 * Front-end: React
