@@ -13,7 +13,7 @@ Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/Alvaro
 ## Videos
 
 * [Video presentación cliente (Esta alojado en Aula)](https://aula.usm.cl/mod/resource/view.php?id=6926137)
-* [Video de avances del proyecto (Hito 3)](https://youtu.be/Iz4WJbGGVIU)
+* [Video de avances del proyecto (Hito 3)](https://youtu.be/zVKJSRhsQBA)
 
 
 ## Aspectos técnicos relevantes
