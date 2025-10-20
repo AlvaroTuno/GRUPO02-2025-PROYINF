@@ -38,7 +38,7 @@ git clone [https://github.com/AlvaroTuno/GRUPO02-2025-PROYINF](https://github.co
 
 Ejecutar en terminal:
 
-1. Deben navegar hasta la carpeta GRUPO02-2025-PROYINF/mi-proyecto-node-docker  
+1. Deben navegar hasta la carpeta GRUPO02-2025-PROYINF/mi-proyecto-node-docker2  
 
 2. (les instalará las dependencias se suele demorar un poco la primera vez con esto levantan el proyecto)  
 docker compose up --build
