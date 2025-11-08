@@ -1,17 +1,21 @@
 import { useState, useEffect } from "react";
+import { useAuth } from "../context/AuthContext"; // 👈 importar el contexto
 
 export default function Pagos() {
+  const { user } = useAuth(); // 👈 obtener el usuario logueado
   const [deudas, setDeudas] = useState([]);
   const [metodo, setMetodo] = useState("transbank");
   const [cargando, setCargando] = useState(false);
 
-  // 🔹 Cargar lista de deudas desde el backend
+  // 🔹 Cargar lista de deudas del RUT logueado
   useEffect(() => {
-    fetch("http://localhost:3000/api/pagos/deudas")
+    if (!user?.rut) return; // 👈 si no hay usuario logueado, no hace nada
+
+    fetch(`http://localhost:3000/api/pagos/deudas?rut=${user.rut}`)
       .then((res) => res.json())
       .then((data) => setDeudas(data))
       .catch(() => alert("❌ Error al cargar la lista de deudas"));
-  }, []);
+  }, [user]); // 👈 se ejecuta cada vez que cambia el usuario
 
   const handlePago = async (cuota) => {
     setCargando(true);
@@ -24,8 +28,8 @@ export default function Pagos() {
           id_prestamo: cuota.id_prestamo,
           id_cuota: cuota.id_cuota,
           monto: cuota.monto_cuota,
-          metodo_pago: metodo
-        })
+          metodo_pago: metodo,
+        }),
       });
 
       const data = await response.json();
@@ -64,7 +68,9 @@ export default function Pagos() {
 
       {/* Tabla de deudas pendientes */}
       <div style={{ marginTop: "40px" }}>
-        {deudas.length === 0 ? (
+        {!user?.rut ? (
+          <p>🔒 Debes iniciar sesión para ver tus deudas.</p>
+        ) : deudas.length === 0 ? (
           <p>🎉 ¡No tienes deudas pendientes!</p>
         ) : (
           <table
@@ -72,7 +78,7 @@ export default function Pagos() {
               margin: "0 auto",
               borderCollapse: "collapse",
               width: "85%",
-              border: "1px solid #ccc"
+              border: "1px solid #ccc",
             }}
           >
             <thead>
@@ -110,7 +116,7 @@ export default function Pagos() {
                         color: "white",
                         border: "none",
                         borderRadius: "6px",
-                        cursor: "pointer"
+                        cursor: "pointer",
                       }}
                     >
                       {cargando ? "Procesando..." : "💳 Pagar ahora"}

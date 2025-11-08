@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 export default function Home() {
   const navigate = useNavigate();
+  const { logout } = useAuth();
 
   const opciones = [
     { label: "Solicitud de Préstamo", route: "/solicitud-prestamo", icon: "bi bi-cash-stack" },
@@ -12,6 +14,11 @@ export default function Home() {
 
   return (
     <div className="container d-flex flex-column align-items-center justify-content-center min-vh-100">
+      <div className="w-100 d-flex justify-content-end">
+        <button className="btn btn-outline-danger mb-3" onClick={logout}>
+          Cerrar sesión
+        </button>
+      </div>
       <h1 className="mb-5 text-center fw-bold text-primary">Menú Principal</h1>
       <div className="row g-4 w-100 justify-content-center">
         {opciones.map((op, i) => (
