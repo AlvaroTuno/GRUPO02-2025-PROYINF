@@ -4,6 +4,7 @@
 * Diego Marin - 202273607-0
 * Matias Guajardo - 202373549-3
 * Vicente Galaz - 202273554-6
+* Cristóbal Reyes 202373562-0
 * **Tutor**: Felipe Ignacio Fernández Aguilar
 
 ## Wiki
